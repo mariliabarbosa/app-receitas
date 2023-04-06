@@ -25,7 +25,7 @@ const RecipeIndex = ({navigation}) => {
                             </TouchableOpacity>
                         )
                     } else if(searchWord){
-                        if(item.name.includes(searchWord)){
+                        if(item.name.toLocaleLowerCase().includes(searchWord.toLocaleLowerCase())){
                             return(
                                 <TouchableOpacity key={index} onPress={() => navigation.navigate('Recipe', {index})}>
                                     <Recipe name={item.name} image={item.imgSrc} key={index}/>
